@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: classrooms
+  config:
+    import: configserver:http://configserver:8888
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+topic:
+  name: classroomMS
